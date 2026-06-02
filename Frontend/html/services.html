@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePlus Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">CarePlus</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="staff.html">Doctors</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item" id="loginLinks"><a class="nav-link" href="customer-login.html">Login</a></li>
+        <li class="nav-item" id="registerLinks"><a class="nav-link" href="customer-register.html">Register</a></li>
+        <li class="nav-item d-none" id="userBox"><span class="nav-link text-white">Welcome, <b id="uname"></b></span></li>
+        <li class="nav-item d-none" id="logoutBtn"><button onclick="customerLogout()" class="btn btn-warning btn-sm ms-2">Logout</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold display-6">Comprehensive Diagnostic Services</h2>
+    <p class="text-muted w-75 mx-auto">Explore our wide range of diagnostic tests. We use advanced technology to provide accurate and reliable results to help you and your doctor make informed healthcare decisions.</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Pathology & Blood Tests -->
+    <div class="col-lg-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+          <h4 class="mb-0"><i class="bi bi-droplet-fill me-2"></i>Pathology & Blood Tests</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 25%">Test Name</th>
+                  <th style="width: 50%">Description & Purpose</th>
+                  <th style="width: 15%">Price (Rs.)</th>
+                  <th style="width: 10%">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Complete Blood Count (CBC)</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Measures red blood cells, white blood cells, and platelets. Used to evaluate overall health and detect a wide range of disorders, including anemia, infection, and leukemia.</td>
+                  <td><span class="fw-bold">400</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Complete Blood Count (CBC)', 400)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Lipid Profile</strong><br><small class="text-danger">10-12 hours fasting</small></td>
+                  <td>Measures cholesterol and triglycerides in your blood. Crucial for assessing your risk of developing cardiovascular diseases such as heart disease or stroke.</td>
+                  <td><span class="fw-bold">800</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Lipid Profile', 800)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Liver Function Test (LFT)</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Measures the levels of proteins, liver enzymes, and bilirubin in your blood to diagnose and monitor liver disease or damage.</td>
+                  <td><span class="fw-bold">900</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Liver Function Test (LFT)', 900)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Kidney Function Test (KFT)</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Checks how well your kidneys are working by measuring levels of urea, creatinine, and certain dissolved salts (electrolytes).</td>
+                  <td><span class="fw-bold">850</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Kidney Function Test (KFT)', 850)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Thyroid Profile (T3, T4, TSH)</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Measures how well your thyroid gland is working to detect hyperthyroidism or hypothyroidism, which can affect weight, energy levels, and mood.</td>
+                  <td><span class="fw-bold">600</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Thyroid Profile', 600)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Vitamin B12 & D3</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Measures essential vitamins critical for bone health, nerve function, and red blood cell production to detect deficiencies causing fatigue or bone pain.</td>
+                  <td><span class="fw-bold">1200</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Vitamin B12 & D3', 1200)">Book</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imaging & Radiology -->
+    <div class="col-lg-12">
+      <div class="card shadow-sm border-0 mt-3">
+        <div class="card-header bg-secondary text-white py-3">
+          <h4 class="mb-0"><i class="bi bi-x-diamond-fill me-2"></i>Imaging & Radiology</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 25%">Scan Name</th>
+                  <th style="width: 50%">Description & Purpose</th>
+                  <th style="width: 15%">Price (Rs.)</th>
+                  <th style="width: 10%">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Digital X-Ray</strong><br><small class="text-danger">Doctor prescription required</small></td>
+                  <td>Uses electromagnetic waves to create images of the inside of your body, most commonly used to check for fractures or lung infections.</td>
+                  <td><span class="fw-bold">500</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Digital X-Ray', 500)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>MRI Scan</strong><br><small class="text-danger">Doctor prescription required</small></td>
+                  <td>Uses strong magnetic fields and radio waves to produce highly detailed images of internal organs, brain, and soft tissues.</td>
+                  <td><span class="fw-bold">4500</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('MRI Scan', 4500)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>CT Scan</strong><br><small class="text-danger">Doctor prescription required</small></td>
+                  <td>Combines multiple X-ray images taken from different angles to create cross-sectional (3D) images of bones, blood vessels, and soft tissues.</td>
+                  <td><span class="fw-bold">3500</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('CT Scan', 3500)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Ultrasound (Sonography)</strong><br><small class="text-danger">Doctor prescription required</small></td>
+                  <td>Uses high-frequency sound waves to capture live images from the inside of your body. Safe and painless, often used during pregnancy or for abdominal checks.</td>
+                  <td><span class="fw-bold">1200</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Ultrasound', 1200)">Book</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diabetes Care -->
+    <div class="col-lg-12">
+      <div class="card shadow-sm border-0 mt-3">
+        <div class="card-header bg-info text-white py-3">
+          <h4 class="mb-0"><i class="bi bi-activity me-2"></i>Diabetes & Endocrinology</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 25%">Test Name</th>
+                  <th style="width: 50%">Description & Purpose</th>
+                  <th style="width: 15%">Price (Rs.)</th>
+                  <th style="width: 10%">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fasting Blood Sugar (FBS)</strong><br><small class="text-danger">8-10 hours fasting</small></td>
+                  <td>Measures your blood sugar after an overnight fast. A primary test used to diagnose diabetes and prediabetes.</td>
+                  <td><span class="fw-bold">120</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Fasting Blood Sugar (FBS)', 120)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Post Prandial Sugar (PP)</strong><br><small class="text-danger">Exactly 2 hrs after meal</small></td>
+                  <td>Measures blood sugar exactly two hours after you start eating a meal to see how your body responds to sugar and starch.</td>
+                  <td><span class="fw-bold">150</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('Post Prandial Sugar (PP)', 150)">Book</button></td>
+                </tr>
+                <tr>
+                  <td><strong>HbA1c (Glycosylated Hemoglobin)</strong><br><small class="text-muted">No fasting required</small></td>
+                  <td>Provides an average of your blood sugar control over the past 2 to 3 months. Essential for long-term diabetes management.</td>
+                  <td><span class="fw-bold">500</span></td>
+                  <td><button class="btn btn-success btn-sm w-100" onclick="selectService('HbA1c', 500)">Book</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/script.js"></script>
+
+<footer class="bg-dark text-light pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><h5 class="fw-bold">CarePlus Diagnostic</h5><p class="small">Trusted diagnostic center providing accurate reports, advanced testing facilities and expert medical guidance.</p></div>
+      <div class="col-md-2"><h6 class="fw-bold">Quick Links</h6><ul class="list-unstyled"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="staff.html" class="footer-link">Doctors</a></li><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+      <div class="col-md-3"><h6 class="fw-bold">Our Services</h6><ul class="list-unstyled small"><li>Blood Tests</li><li>MRI / CT Scan</li><li>X-Ray and Ultrasound</li><li>Diabetes Care</li><li>Health Checkup Packages</li></ul></div>
+      <div class="col-md-3"><h6 class="fw-bold">Contact Info</h6><p class="small mb-1">Sector 62, Noida</p><p class="small mb-1">+91 98765 43210</p><p class="small mb-1">careplus@gmail.com</p><p class="small">Mon-Sat: 8 AM - 8 PM</p></div>
+    </div>
+    <hr class="border-secondary mt-4">
+    <div class="text-center small">© 2025 CarePlus Diagnostic Clinic | Designed for Academic and Demo Purpose</div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">CarePlus</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <!-- LEFT MENU -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="staff.html">Doctors</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- RIGHT MENU -->
+      <ul class="navbar-nav">
+        <li class="nav-item" id="loginLinks">
+          <a class="nav-link" href="customer-login.html">Login</a>
+        </li>
+        <li class="nav-item" id="registerLinks">
+          <a class="nav-link" href="customer-register.html">Register</a>
+        </li>
+
+        <li class="nav-item d-none" id="userBox">
+          <span class="nav-link text-white">
+            Welcome, <b id="uname"></b>
+          </span>
+        </li>
+
+        <li class="nav-item d-none" id="logoutBtn">
+          <button onclick="customerLogout()" class="btn btn-warning btn-sm ms-2">
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+  <h3 class="fw-bold mb-4">Customer Dashboard</h3>
+
+  <div class="card shadow-sm p-4 mb-4 border-0">
+    <h5 class="fw-bold text-primary mb-3">Your Profile Details</h5>
+    <p class="mb-1"><b>Name:</b> <span id="cname"></span></p>
+    <p class="mb-1"><b>Mobile:</b> <span id="cmobile"></span></p>
+    <p class="mb-0"><b>Email:</b> <span id="cemail"></span></p>
+  </div>
+
+  <h5>Appointment History</h5>
+  <div class="table-responsive">
+  <table class="table table-bordered align-middle">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Service</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="apptBody"></tbody>
+  </table>
+  </div>
+</div>
+
+<script src="../js/customer-dashboard.js"></script>
+<script src="../js/auth.js"></script>
+
+<footer class="bg-dark text-light pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><h5 class="fw-bold">CarePlus Diagnostic</h5><p class="small">Trusted diagnostic center providing accurate reports, advanced testing facilities and expert medical guidance.</p></div>
+      <div class="col-md-2"><h6 class="fw-bold">Quick Links</h6><ul class="list-unstyled"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="staff.html" class="footer-link">Doctors</a></li><li><a href="faq.html" class="footer-link">FAQ</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+      <div class="col-md-3"><h6 class="fw-bold">Our Services</h6><ul class="list-unstyled small"><li>Blood Tests</li><li>MRI / CT Scan</li><li>X-Ray and Ultrasound</li><li>Diabetes Care</li><li>Health Checkup Packages</li></ul></div>
+      <div class="col-md-3"><h6 class="fw-bold">Contact Info</h6><p class="small mb-1">Sector 62, Noida</p><p class="small mb-1">+91 98765 43210</p><p class="small mb-1">careplus@gmail.com</p><p class="small">Mon-Sat: 8 AM - 8 PM</p></div>
+    </div>
+    <hr class="border-secondary mt-4">
+    <div class="text-center small">© 2025 CarePlus Diagnostic Clinic | Designed for Academic and Demo Purpose</div>
+  </div>
+</footer>
+
+</body>
+</html>
